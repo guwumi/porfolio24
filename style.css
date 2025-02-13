@@ -1,0 +1,131 @@
+@font-face {
+    font-family: "Fafo Sans";
+    src: url("./FafoSans/Fafo-Sans-Regular.otf") format("opentype"); font-weight: 400;
+}
+@font-face {
+        font-family: "Fafo Sans";
+        src: url("./FafoSans/Fafo-Sans-Bold.otf") format("opentype"); font-weight: 500;
+    } 
+
+/* GENERAL */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Fafo Sans";
+    text-align: left;
+}
+
+h1{
+    font-size: 8vh;
+}
+
+h2{
+    font-size: 6vh;
+}
+
+p, ul{
+    font-size: 4vh;
+}
+
+ul li{
+    list-style-position: inside;
+}
+
+/* CENTRA EL FLIPBOOK */
+
+#centrado{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #003547;
+    overflow: hidden;
+}
+
+/* FLIPBOOK NO TOCAR */
+
+.flipbook{
+    width: 90%;
+    height: 90vh;
+}
+
+.flipbook .page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /*     align-items: center; */
+    gap: 10px;
+    background-color: #e4e08c;
+    user-select: none;
+}
+    /* DEGRADADO DE LA PÁGINA */
+.flipbook [page]{
+    position: relative;
+}
+
+.flipbook [page=1]::before{
+    content: none !important;
+}
+
+.flipbook [page$="1"]::before,
+.flipbook [page$="3"]::before,
+.flipbook [page$="5"]::before,
+.flipbook [page$="7"]::before,
+.flipbook [page$="9"]::before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 10;
+   background-image: linear-gradient(to right, #2a2a2a65 0%, #2a2a2a00 5%);
+}
+
+.flipbook [page$="0"]::before,
+.flipbook [page$="2"]::before,
+.flipbook [page$="4"]::before,
+.flipbook [page$="6"]::before,
+.flipbook [page$="8"]::before{
+    content: "";
+    width: 100%;
+   height: 100%;
+   position: absolute;
+   z-index: 10;
+   background-image: linear-gradient(to left, #2a2a2a65 0%, #2a2a2a00 5%);
+}
+
+/* PRIMERAS / ÚLTIMAS PÁGINAS */
+
+.intro{
+    background-color:#ed8b16 !important;
+    color: #e4e08c;
+}
+
+.intro div{
+    padding: 10vh;
+}
+
+.cubierta{
+    display: flex;
+    justify-content: center !important;
+}
+
+/* INTERIOR DEL LIBRO  */
+
+.section{
+    color: #003547;
+}
+
+.section div{
+    padding: 10vh;
+}
+
+/* VIDEOS DE LAS PÁGINAS */
+
+.page img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
