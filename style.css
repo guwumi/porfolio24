@@ -31,6 +31,7 @@ p, ul{
 
 ul li{
     list-style-position: inside;
+    padding-left: 2vh;
 }
 
 /* CENTRA EL FLIPBOOK */
@@ -41,7 +42,9 @@ ul li{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #003547;
+/*     background-color: #003547; */
+    background-image: url(img/fondo\ marmol.jpg);
+    background-size: cover;
     overflow: hidden;
 }
 
@@ -50,16 +53,16 @@ ul li{
 .flipbook{
     width: 90%;
     height: 90vh;
+    filter: drop-shadow(1vh 1vh 1vh #a2a2a2);
 }
 
 .flipbook .page{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /*     align-items: center; */
     gap: 10px;
-    background-color: #e4e08c;
     user-select: none;
+    background-size: contain;
 }
     /* DEGRADADO DE LA PÁGINA */
 .flipbook [page]{
@@ -98,8 +101,18 @@ ul li{
 
 /* PRIMERAS / ÚLTIMAS PÁGINAS */
 
+.portada{
+    background-image: url(img/portada.jpg) !important;
+    background-size: cover !important;
+}
+
+.contra{
+    background-image: url(img/contraportada.jpg);
+    background-size: cover !important;
+}
+
 .intro{
-    background-color:#ed8b16 !important;
+    background-image: url(img/plano\ naranja.jpg);
     color: #e4e08c;
 }
 
@@ -115,17 +128,10 @@ ul li{
 /* INTERIOR DEL LIBRO  */
 
 .section{
-    color: #003547;
+    color: #e4e08c;
+    background-image: url(img/plano.jpg);
 }
 
 .section div{
     padding: 10vh;
-}
-
-/* VIDEOS DE LAS PÁGINAS */
-
-.page img{
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
 }
